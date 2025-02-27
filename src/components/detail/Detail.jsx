@@ -51,7 +51,7 @@ const Detail = () => {
                             />
                             <span>photo_2024_2</span>
                             </div>
-                            <img src="./download.png" alt="" className="icon"/> 
+                            <img src="./download.png" alt="" className="icon"/>
                         </div>
                         <div className="photoItem">
                             <div className="photoDetail">
