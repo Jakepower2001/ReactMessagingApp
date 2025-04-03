@@ -19,7 +19,7 @@ const Login = () => {
     }
 }
 
-    const handleRegister = (e) =>{
+    const handleRegister = async (e) =>{
         e.preventDefault()
         const formData = new FormData(e.target);
 
