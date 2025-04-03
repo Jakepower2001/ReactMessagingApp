@@ -18,6 +18,17 @@ const Login = () => {
     }
 }
 
+    const handleRegister = (e) =>{
+        e.preventDefault()
+        const formData = new FormData(e.target);
+
+        const { username, email, password } = Object.fromEntries(formData)
+
+        console.log(username)
+    }
+    
+
+
     const handleLogin = e =>{
         e.preventDefault()
         //toast.error("Hey there")
@@ -36,11 +47,17 @@ const Login = () => {
         <div className="separator"></div>
         <div className="item">
         <h2>Create an account to continue!</h2>
-            <form>
+            <form onSubmit={handleRegister}>
                 <label htmlFor="file">
                     <img src={avatar.url || "./avatar.png"} alt=""/>
-                    Upload your image</label>
-                <input type = "file" id="file" style={{display:"none"}} onChange={handleAvatar}/>
+                    Upload your image
+                </label>
+                <input 
+                type = "file" 
+                id="file" 
+                style={{display:"none"}} 
+                onChange={handleAvatar}
+                />
                 <input type = "text" placeholder="Username" name="username"/>
                 <input type = "text" placeholder="Email" name="email"/>
                 <input type = "password" placeholder="Password" name="password"/>
