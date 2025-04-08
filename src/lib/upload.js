@@ -18,10 +18,10 @@ uploadTask.on(
 
   }, 
   (error) => {
-    reject("Something went wrong!" +error.code)
+    reject("Something went wrong!" + error.code)
   }, 
   () => {
-    getDown(uploadTask.snapshot.ref).then((downloadURL) => {
+    getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
   resolve(downloadURL)
     });
   }

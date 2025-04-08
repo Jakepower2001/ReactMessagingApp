@@ -5,15 +5,16 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "fire
 import { auth, db } from "../../lib/firebase";
 import { doc, setDoc } from "firebase/firestore";
 import upload from "../../lib/upload";
+
 const Login = () => {
     const [avatar,setAvatar] = useState({
         file:null,
-        url:""
-    })
+        url:"",
+    });
 
     const [loading,setLoading] = useState(false)
 
-    const handleAvatar = e =>{
+    const handleAvatar = (e) =>{
             if(e.target.files[0]){
             setAvatar({
             file:e.target.files[0],
@@ -23,11 +24,11 @@ const Login = () => {
 }
 
     const handleRegister = async (e) =>{
-        e.preventDefault()
+        e.preventDefault();
         setLoading(true)
         const formData = new FormData(e.target);
 
-        const { username, email, password } = Object.fromEntries(formData)
+        const { username, email, password } = Object.fromEntries(formData);
 
     try{
 
@@ -62,7 +63,7 @@ const Login = () => {
         setLoading(true);
         const formData = new FormData(e.target);
 
-        const {  email, password } = Object.fromEntries(formData)
+        const {  email, password } = Object.fromEntries(formData);
 
         try{
             await signInWithEmailAndPassword(auth,email,password);
